@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Punjab college</h1>
+    <hr>
+    <br>
+    <input type="text" name="search" onblur="handleChange()" id="search" placeholder="enter college name">
+    <br>
+    <br>
+    <hr>
+    <h3>List of Colleges</h3>
+    <ol id="results">
+    </ol>
+    <script>
+     function handleChange(){
+                var searchText = document.getElementById("search").value;
+                console.log(searchText);
+            
+                var searchResults=students.filter((s) =>{
+                    return s.name.toLowerCase().search(searchText.toLowerCase())==0 || s.loc.toLowerCase().search(searchText.toLowerCase())==0;
+                });
+                console.log(searchResults);
+
+                var result = document.getElementById("results")
+                    result.innerHTML ="";
+            for(let index = 0; index<searchResults.length; index++){
+                result.innerHTML+= "<li>"+searchResults[index].name  + " " + searchResults[index].loc +  "</li>";
+            }
+        }
+        
+      
+        var students = [
+            { name: "PCTE Institute Of Hotel Management & Catering Technology",loc:" Ludhiana"},
+
+            {name:  "PCTE Institute Of Pharmaceutical Sciences,",loc:" Ludhiana"},
+
+            {name:  "PCTE Institute Of Management And Technology, ",loc:"Ludhiana"},
+                
+            {name:  "Synetic Business School,",loc:" Ludhiana"},
+                
+            {name:  "College Of Dairy Science And Technology",loc:", Ludhiana"},
+                
+            {name:  "Guru Nanak Dev Polytechnic College, ",loc:"Ludhiana"},
+                
+            {name:  "R & D Polytechnic College, ",loc:"Ludhiana"},
+
+
+            {name: "College Of Veterinary Science GADVASU, ",loc:"Ludhiana"},
+
+            {name: "Punjab College Of Technical Education PCTE, ",loc:"Ludhiana"},
+
+
+            {name: "Guru Hargobind College Of Education",loc:", Raikot"},
+
+            {name: "Shree Atam Vallabh Jain College SAVJC,",loc:" Ludhiana"},
+
+
+            {name: "Baba Kundan Rural College Of Education, ",loc:"Ludhiana"},
+
+
+            {name: "Govind National College,",loc:" Narangwal"},
+
+
+            {name: "BSSG Govt College,",loc:" Sidhsar"},
+
+            {name: "Malwa College, ",loc:"Bondli Samrala"},
+
+            {name:  "Khalsa College For Women, ",loc:"Jagraon"},
+
+            {name:  "Devki Devi Jain Memorial College For Women, ",loc:"Ludhiana"},
+
+            {name: "Master Tara Singh Memorial College For Women, ",loc:"Ludhiana"},
+
+            {name:  "Ramgarhia Girls College, ",loc:"Miller Ganj"},
+
+            {name:  "Guru Nanak Khalsa College For Women,",loc:" Model Town"},
+
+            {name:  "Mata Ganga Khalsa College For Girls,",loc:" Manji Sahib"},
+
+            {name: " GGN Khalsa College,",loc:" Ludhiana"},
+
+            {name: " A S College,",loc:" Khanna"},
+                
+            { name: "St Soldier Institute Of Hotel Management & Catering Technology,",loc:" Jalandhar"},
+
+            {name: " St Soldier Management And Technical Institute, JalandharST Soldier Degree College Co-Ed,",loc:" Jalandhar"},
+
+            {name: "St Soldier Industrial Training Institute,",loc:" Shahkot"},
+
+            {name: "St Soldier Nursing Training Institute For GNM, ",loc:"Jalandhar"},
+
+            { name: "St Soldier Institute Of Pharmacy,",loc:" Jalandhar"},
+
+            {name: "PTM Arya College,",loc:" Nurmahal"},
+
+            {name: " MGSM Janta College,",loc:" Jalandhar"},
+
+            { name: "DIPS Institute Of Management And Technology,",loc:" Jalandhar"},
+
+            {name: "Khalsa College Lyallpur Institute Of Management & Technology, ",loc:"Jalandhar"},
+
+            {name: "Dr B R Ambedkar National Institute Of Technology,",loc:" Jalandhar"},
+
+            {name: "Montgomery Guru Nanak College Of Education, ",loc:"Jalandhar"},
+
+            {name: "Hans Raj Mahila Maha Vidyalaya,",loc:" Jalandhar"},
+
+            {name: "DAV Institute of Engineering & Technology, ",loc:"Jalandhar"},
+
+            {name: "VMS Polytechnic College,",loc:" Batala"},
+
+            {name: "Mehr Chand Polytechnic College,",loc:" Jalandhar"},
+
+            {name: "GHG Khalsa College of Pharmacy, ",loc:"Gurusar"},
+
+            {name: "DAV Institute of Physiotherapy & Rehabilitation College,",loc:" Jalandhar"},
+
+            {name: "Dayanand Ayurvedic College, ",loc:"Jalandhar "},
+
+            {name: "Sri Sai College of Education, ",loc:"Badhani"},
+
+            {name: "Homeopathic Medical College,",loc:"Abohar"},
+
+            {name: "St Soldier Institute of Engineering and Technology, ",loc:"Jalandhar"},
+
+            { name: "Lyallpur Khalsa College,",loc:" Jalandhar"},
+
+            { name: "Doaba College,",loc:" Jalandhar"},
+
+            {name: "APS College Of Nursing,",loc:" Jalandhar"},
+
+
+            { name: " Punjab Institute Of Textile Technology PITT", loc:"Amritsar"},
+
+
+            { name: " CKD Institute Of Management & Technology,",loc:" Amritsar"},
+
+
+            { name: " Khalsa College Of Pharmacy, ",loc:"Amritsar"},
+
+            { name: " Khalsa College Of Nursing, ",loc:"Amritsar"},
+
+            { name: " Khalsa College Of Engineering & Technology,",loc:" Amritsar"},
+
+            { name: "  Khalsa College Of Physical Education, ",loc:"Amritsar"},
+
+            { name: " DAV College of Education, ",loc:"Amritsar"},
+
+
+            { name: "  Satyam Polytechnic & Pharmacy College,",loc:" Amritsar"},
+
+            { name: "  Shiv Shankar Institute of Engineering & Technology SSIET, ",loc:"Patti"},
+
+            { name: "  Govt Dental College and Hospital,",loc:" Amritsar"},
+
+            { name: "  Punjab Government Dental College and Hospital, ",loc:"Amritsar"},
+
+            { name: "  SLN Ayurvedic College & Hospital, ",loc:"Amritsar"},
+
+            { name: "  Sri Guru Ram Das GRD Institute of Medical Sciences & Research, ",loc:"Amritsar"},
+
+
+            { name: "  Government Dental College And Hospital, ",loc:"Amritsar"},
+
+
+            { name: " Faculty Of Biotechnology And Genetic Engineering, Guru Nanak Dev University, ",loc:"Amritsar"},
+
+
+            { name: " Shree Lakshmi Narayan Ayurvedic College,",loc:" Amritsar"},
+
+
+            { name: " Shri Guru Ramdas Institute of Medical Sciences & Research, ",loc:"Amritsar"},
+
+
+            { name: " Central Institute Of Plastic Engineering And Technology (CIPET),",loc:" Amritsar"},
+
+
+            { name: " Khalsa College for Women,",loc:" Amritsar"},
+
+            { name: " BBK DAV College for Women,",loc:" Amritsar"},
+
+
+            { name: "  SSCMT College of Science And Technology, ",loc:"Amritsar"},
+
+            { name: "  NRI College of Nursing,",loc:" Amritsar"},
+
+            { name: "   Guru Nanak Dev University Department of Pharmacy,",loc:"Amritsar"},
+
+            // { name: "  Government Dental College,",loc:" Amritsar"},
+    ];
+    var result = document.getElementById("results")
+        
+    for(let index = 0; index<students.length; index++){
+        result.innerHTML+= "<li>"+students[index].name+students[index].loc+ "</li>";
+    }
+    </script>
+</body>
+</html>
